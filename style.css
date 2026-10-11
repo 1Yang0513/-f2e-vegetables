@@ -1,0 +1,204 @@
+/* =========================================================
+   色票（來自 Figma Design guideline）
+   Primary      #778A50  深綠
+   background   #EDF2C5  淺黃綠（整頁底色）
+   content_text #7D7D7D  灰（內文）
+   content_bg   #F7FBDA  淡黃（內容框底色）
+   ========================================================= */
+
+/* --- Reset CSS --- */
+*, *::before, *::after {
+    box-sizing: border-box;   /* width 包含 padding 與 border，比較好算尺寸 */
+    margin: 0;                /* 清除所有標籤預設外距，間距之後自己設定 */
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;         /* 清除清單（ul/li）前面的黑點 */
+}
+
+img {
+    display: block;           /* 避免圖片底下多出一小條空隙 */
+    max-width: 100%;          /* 圖片寬度不超過父元件 */
+}
+
+/* --- Global Style --- */
+body {
+    background-color: #EDF2C5;   /* 整頁淺黃綠底色 */
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;             /* Text1 */
+    color: #7D7D7D;
+}
+
+/* --- Container：寬度 1120px 並水平置中 --- */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* --- Header --- */
+.header-top {
+    display: flex;
+    justify-content: space-between;  /* 標題在左、工具列在右 */
+    align-items: center;
+    padding: 40px 0 13px;
+}
+
+.header-title {
+    font-size: 44px;                 /* Head1 */
+    font-weight: 900;                /* Black */
+    color: #778A50;
+    line-height: 1.2;
+}
+
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-img {
+    width: 24px;
+    height: 24px;
+}
+
+.divider {
+    width: 1px;
+    height: 18px;
+    background-color: #778A50;
+    margin: 0 4px;
+}
+
+.btn-outline {
+    border: 1px solid #778A50;
+    border-radius: 2px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #778A50;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background-color: #778A50;
+    color: #FFF;
+}
+
+/* --- Nav：整條深綠色橫條 --- */
+.nav-list {
+    display: flex;               /* ul 變成彈性容器，li 就會並排 */
+    gap: 62px;                   /* 選單項目之間的距離 */
+    padding: 0 30px;
+    background-color: #778A50;
+}
+
+.nav-list-item-link {
+    display: inline-block;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav-list-item-link:hover {
+    color: #EDF2C5;              /* 滑鼠移上去的視覺回饋 */
+    text-decoration: underline;
+}
+
+/* --- Banner：圖片寬度跟 container 一樣，高度固定 --- */
+.banner {
+    margin-top: 16px;
+}
+
+.banner-img {
+    width: 100%;
+    height: 363px;
+    object-fit: cover;           /* 圖片裁切填滿，不變形 */
+}
+
+/* --- Content Area：左右兩欄（Flex） --- */
+.content-area {
+    display: flex;
+    gap: 64px;
+    margin-top: 24px;
+    margin-bottom: 56px;
+}
+
+.main-area,
+.sidebar {
+    flex: 1;                     /* 兩欄等寬 */
+    display: flex;
+    flex-direction: column;      /* 上面標題條、下面內容往下排 */
+}
+
+/* 左右兩個共用的深綠色標題條 */
+.section-title {
+    background-color: #778A50;
+    color: #FFF;
+    font-size: 16px;             /* Head2 */
+    font-weight: 700;
+    line-height: 44px;
+    padding: 0 30px;
+}
+
+/* --- Gallery：三欄卡片（Grid） --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card-title {
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #778A50;
+}
+
+.card-text {
+    flex: 1;                     /* 讓三張卡片的淡黃色框一樣高 */
+    background-color: #F7FBDA;
+    padding: 12px;
+    font-size: 12px;             /* Text2 */
+    line-height: 1.5;
+}
+
+/* --- Contact --- */
+.contact-body {
+    flex: 1;                     /* 淡黃色框往下延伸，與左邊對齊 */
+    margin-top: 16px;
+    background-color: #F7FBDA;
+    padding: 20px 30px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.contact-divider {
+    border: none;
+    border-top: 1px solid #7D7D7D;
+    margin: 12px 0;
+}
+
+/* --- Footer：撐滿整個瀏覽器寬度 --- */
+.footer {
+    background-color: #778A50;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #FFF;
+}
